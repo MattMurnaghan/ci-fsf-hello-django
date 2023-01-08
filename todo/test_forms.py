@@ -9,7 +9,7 @@ class TestItemForm(TestCase):
     def test_item_name_is_required(self):
         form = ItemForm({'name': ''})
         # test for valid form
-        self.assertFalse(form.is_valid())  
+        self.assertFalse(form.is_valid())
         # test to make sure name is in the list of keys
         self.assertIn('name', form.errors.keys())
         # test to make sure that the first string in the list of errors

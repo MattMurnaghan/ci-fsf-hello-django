@@ -8,4 +8,4 @@ class TestModels(TestCase):
 
     def test_done_default_to_false(self):
         item = Item.objects.create(name='Todo Test Item')
-        slef.assertFalse(item.done)
+        self.assertFalse(item.done)
