@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-if os.path.isfile("env.py"): 
+if os.path.isfile("env.py"):
     import env
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-x6l1zs_cc=jw#sk&r9kzrul02k!4=n#!h0^i3krtmfku#0b#0r')
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-x6l1zs_cc=jw#sk&r9kzrul02k!4=n#!h0^i3krtmfku#0b#0r'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -96,16 +99,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_\
+            validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_\
+            validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_\
+        validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_\
+            validation.NumericPasswordValidator',
     },
 ]
 
@@ -134,4 +141,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # added for the latest version of django to support CSRF Authentication
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-mattmurnagh-cifsfhellod-2w5d45cvool.ws-eu81.gitpod.io', 'https://*.127.0.0.1:8000']
+    'https://8000-mattmurnagh-cifsfhellod-2w5d45cvool.ws-eu81.gitpod.io',
+    'https://*.127.0.0.1:8000'
+]
